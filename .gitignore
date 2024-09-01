@@ -60,6 +60,5 @@ Thumbs.db
 *.swo
 *~
 
-# .csv files
-.csv
+users.csv
 .env
