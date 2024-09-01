@@ -16,8 +16,7 @@ async def register(request: Request):
     password = form_data.get("password")
     if users_dao.get_user_by_username(username):
         return JSONResponse(status_code=200, content={"message": "User already registered, please login to continue."})
-    user_id = users_dao.generate_user_id()
-    users_dao.add_user(user_id, username, password)
+    users_dao.add_user(username, password)
     return JSONResponse(status_code=200, content={"message": "User registered successfully, please login."})
 
 
@@ -25,7 +24,7 @@ async def register(request: Request):
 async def get_user_portfolio(
         token: str = Depends(get_current_user)
 ):
-    username = token['username']  # Fetch current user from token
+    username = token.username
 
     try:
         portfolio = users_dao.show_mutual_funds(username)
