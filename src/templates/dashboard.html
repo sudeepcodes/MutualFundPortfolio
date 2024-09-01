@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<h1>Dashboard</h1>
+
+<!-- Logout Button -->
+<button id="logout-button" onclick="logout()">Logout</button>
+
+<!-- Go to Portfolio Button -->
+<button id="portfolio-button" onclick="goToPortfolio()">Go to Portfolio</button>
+
+<form onsubmit="event.preventDefault(); selectFund();">
+    <label for="fund_name">Select Fund House:</label>
+    <select id="fund_name" name="fund_name">
+    </select>
+    <button type="submit">Show Funds</button>
+</form>
+
+<h2>Funds under selected house:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Scheme Code</th>
+        <th>ISIN Div Payout Growth</th>
+        <th>ISIN Div Reinvestment</th>
+        <th>Scheme Name</th>
+        <th>Net Asset Value</th>
+        <th>Date</th>
+        <th>Scheme Type</th>
+        <th>Scheme Category</th>
+        <th>Mutual Fund Family</th>
+        <th>Quantity</th> <!-- Added Quantity column -->
+        <th>Action</th> <!-- Added Action column -->
+    </tr>
+    </thead>
+    <tbody id="funds_table_body">
+    </tbody>
+</table>
+
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Portfolio</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<h1>User Portfolio</h1>
+
+<!-- Logout Button -->
+<button id="logout-button" onclick="logout()">Logout</button>
+
+<!-- Go to Dashboard Button -->
+<button id="go-dashboard-button" onclick="goToDashboard()">Go to Dashboard</button>
+
+<h2>My Mutual Fund Portfolio:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Mutual Fund Name</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody id="portfolio_table_body">
+        <!-- Data will be populated by JavaScript -->
+    </tbody>
+</table>
+
+<script src="/static/js/portfolio.js"></script>
+</body>
+</html>

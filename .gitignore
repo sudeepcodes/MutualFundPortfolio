@@ -1,0 +1,65 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm project files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Virtual environment
+env/
+venv/
+ENV/
+VENV/
+env.bak/
+venv.bak/
+
+# Environments
+*.env
+.env.*
+
+# Pytest cache
+.pytest_cache/
+
+# Mypy cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# SQLite database files
+*.sqlite3
+
+# Logs
+*.log
+*.out
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Sentry DSN
+.sentryclirc
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+
+# .csv files
+.csv
+.env
