@@ -1,4 +1,5 @@
 import csv
+import json
 import os
 
 import bcrypt
@@ -22,8 +23,7 @@ class UserDbDao:
                     "id": user_id,
                     "username": row["username"],
                     "password": row["password"],
-                    # Initialize purchases to an empty dict if it doesn't exist
-                    "purchases": eval(row.get("purchases", "{}")) if row.get("purchases") else {}
+                    "purchases": json.loads(row.get("purchases", "{}")) if row.get("purchases") else {}
                 }
         return conn
 
@@ -37,7 +37,7 @@ class UserDbDao:
                     "id": user["id"],
                     "username": user["username"],
                     "password": user["password"],
-                    "purchases": user.get("purchases", {})  # Ensure purchases field is always included
+                    "purchases": json.dumps(user.get("purchases", {}))  # Ensure purchases field is always included
                 })
 
     def hash_password(self, password):

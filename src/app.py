@@ -4,16 +4,15 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from auth import router as auth_router
-from funds import router as funds_router
-from users import router as users_router
+from routers.auth import router as auth_router
+from routers.funds import router as funds_router
+from routers.users import router as users_router
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Existing routes here...
 app.include_router(auth_router, prefix="/auth")
 app.include_router(funds_router, prefix="/funds")
 app.include_router(users_router, prefix="/users")
@@ -37,7 +36,6 @@ async def dashboard(request: Request):
 
 @app.get("/portfolio", response_class=HTMLResponse)
 async def render_portfolio_page(request: Request):
-    # Just render the HTML template; portfolio data will be loaded via JavaScript
     return templates.TemplateResponse("portfolio.html", {"request": request})
 
 

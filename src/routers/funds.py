@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, Form, HTTPException, status
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
-from auth import get_current_user
 from globals import mutual_fund_dao, users_dao
+from routers.auth import get_current_user
 
 router = APIRouter()
 
@@ -29,7 +29,6 @@ async def buy_fund(
 ):
     username = token['username']  # Fetch current user from token
 
-    # Validate fund_id and units
     if not fund_name or units <= 0:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

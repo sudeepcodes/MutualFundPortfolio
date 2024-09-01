@@ -1,84 +1,36 @@
-# Mutual Fund Broker Web Application
+# Mutual Fund Broker Web Application with RapidAPI Integration
 
-This is a full-stack web application designed for a mutual fund brokerage firm. The application allows users to select a fund family house, fetch open-ended schemes for that family, and view mutual fund data via integration with RapidAPI. Users can also initiate the purchase of mutual fund units through the application. The backend is developed using FastAPI, and the frontend can be built using a modern framework like React, Angular, Vue.js, or plain HTML/CSS/JavaScript.
+## Description
+Your task is to create a full-stack web application for a mutual fund brokerage firm from scratch. The application should allow users to select a fund family house, fetch open-ended schemes for that family, and integrate with RapidAPI to fetch mutual fund data. All API endpoints should be authenticated. You have the freedom to choose any frontend approach, including using a modern framework like React, Angular, or Vue.js, or developing without any framework.
 
-## Table of Contents
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Setup Instructions](#setup-instructions)
-  - [Backend Setup (FastAPI)](#backend-setup-fastapi)
-  - [Frontend Setup](#frontend-setup)
-- [Usage](#usage)
-  - [Login](#login)
-  - [Dashboard](#dashboard)
-  - [View and Buy Mutual Funds](#view-and-buy-mutual-funds)
-- [Integration with RapidAPI](#integration-with-rapidapi)
-- [Environment Variables](#environment-variables)
-- [API Endpoints](#api-endpoints)
-- [Error Handling](#error-handling)
-- [License](#license)
+## Requirements
 
-## Features
-- User authentication using dummy credentials.
-- Integration with RapidAPI to fetch mutual fund data.
-- Dashboard for selecting fund family houses and viewing open-ended schemes.
-- Ability to view details of individual mutual funds.
-- Option to purchase mutual fund units.
-- Responsive design for seamless usage across devices.
+### Frontend
+- Develop a web application frontend using the approach of your choice, which can include using a framework like React, Angular, or Vue.js, or developing without any framework.
+- Implement a simple login page where users can enter their credentials (dummy username and password).
+- Upon successful login, users should be redirected to a dashboard where they can view mutual funds.
+- Create a dashboard page where users can select the fund family house (e.g., HDFC, ICICI, SBI) from a dropdown menu.
+- Display a list of open-ended schemes for the selected fund family house.
+- Allow users to click on a mutual fund to view more details.
+- Provide a "Buy" button for each mutual fund to allow users to initiate a purchase of units.
+- Implement error handling and display meaningful messages to users in case of failures or invalid input.
 
-## Technology Stack
-- **Backend**: Python, FastAPI
-- **Frontend**: [Your choice: React, Angular, Vue.js, or plain HTML/CSS/JavaScript]
-- **Authentication**: JWT (JSON Web Tokens)
-- **API Integration**: RapidAPI (https://rapidapi.com/suneetk92/api/latest-mutual-fund-nav)
-- **Environment Variables**: Python-dotenv
+### Backend (FastAPI)
+- Develop a backend API using Python FastAPI.
+- Implement a login endpoint that accepts dummy user credentials from an environment file (.env) and generates an access token upon successful authentication.
+- Create API endpoints to fetch open-ended schemes for the selected fund family house and integrate with the RapidAPI to fetch mutual fund data.
+- Ensure that all API endpoints are authenticated with the access token generated using the dummy user credentials.
+- Implement an API endpoint to support the purchase of units for a selected mutual fund.
 
-## Setup Instructions
+### Integration with RapidAPI
+- Sign up for an account on RapidAPI to obtain the required API key.
+- Integrate with the external API specified in the RapidAPI marketplace [latest-mutual-fund-nav](https://rapidapi.com/suneetk92/api/latest-mutual-fund-nav) to fetch mutual fund data based on the selected fund family house.
+- Integrate to fetch only the open-ended schemes. The API provides parameters to choose the fund family.
 
-### Backend Setup (FastAPI)
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/your-repo/mutual-fund-broker.git
-    cd mutual-fund-broker/backend
-    ```
+## Documentation
+- Provide clear documentation for setting up and running both the frontend and backend applications.
+- Include instructions for users to set up the application locally, including how to use the dummy user credentials from the environment file and integrate the RapidAPI key.
 
-2. **Create a Virtual Environment**:
-    ```bash
-    python3 -m venv env
-    source env/bin/activate   # On Windows use `env\Scripts\activate`
-    ```
-
-3. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4**Run the FastAPI Server**:
-    ```bash
-    uvicorn main:app --reload
-    ```
-   The backend will be running on `http://127.0.0.1:8000`.
-
-## Usage
-
-### Login
-1. Open the application in your browser (e.g., `http://localhost:3000` for React, Angular, Vue.js).
-2. Enter the dummy username and password defined in your `.env` file to log in.
-
-### Dashboard
-1. After logging in, you will be redirected to the dashboard.
-2. Select a fund family house from the dropdown menu to view available open-ended schemes.
-
-### View and Buy Mutual Funds
-1. Click on any mutual fund from the list to view more details.
-2. Use the "Buy" button to initiate the purchase of units for the selected mutual fund.
-
-## Integration with RapidAPI
-The application uses the RapidAPI service to fetch the latest mutual fund data. Ensure that you have signed up on RapidAPI and obtained the necessary API key, which should be included in your `.env` file.
-
-## Environment Variables
-Ensure that the following environment variables are set in your `.env` file:
-```env
-RAPIDAPI_KEY=your-rapidapi-key
-DUMMY_USERNAME=your-dummy-username
-DUMMY_PASSWORD=your-dummy-password
+## Submission Guidelines
+- Create the full-stack web application from scratch, including both frontend and backend components.
+- Provide detailed instructions on how to set up and run the frontend and backend applications locally.

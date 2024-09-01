@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Request, Depends, HTTPException, status
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 
 from globals import users_dao
-from auth import get_current_user
+from .auth import get_current_user
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
