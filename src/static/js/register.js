@@ -11,6 +11,6 @@ async function registerUser(event) {
     alert(result.message);
 
     if (response.ok) {
-        window.location.href = '/users/login'; // Redirect to login page
+        window.location.href = '/login'; // Redirect to login page
     }
 }
